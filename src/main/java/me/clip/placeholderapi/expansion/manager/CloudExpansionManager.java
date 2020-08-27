@@ -44,6 +44,8 @@ import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.clip.placeholderapi.expansion.cloud.CloudExpansion;
@@ -224,6 +226,9 @@ public final class CloudExpansionManager {
   @NotNull
   public CompletableFuture<File> downloadExpansion(@NotNull final CloudExpansion expansion,
       @NotNull final CloudExpansion.Version version) {
+    if (PlaceholderAPI.isBlocked(expansion.getName())) {
+      throw new UnsupportedOperationException("This expansion isn't supported on Minehut.");
+    }
     final CompletableFuture<File> previous = await.get(toIndexName(expansion));
     if (previous != null) {
       return previous;

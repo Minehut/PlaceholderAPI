@@ -21,6 +21,9 @@
 package me.clip.placeholderapi;
 
 import com.google.common.collect.ImmutableSet;
+
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -48,9 +51,18 @@ public final class PlaceholderAPI {
   private static final Pattern BRACKET_PLACEHOLDER_PATTERN = Pattern.compile("[{]([^{}]+)[}]");
   private static final Pattern RELATIONAL_PLACEHOLDER_PATTERN = Pattern
       .compile("[%](rel_)([^%]+)[%]");
-
+  private static final Map<String, PlaceholderHook> placeholders = new HashMap<>();
+  private static final Set<String> blocked = new HashSet<>();
+  static {
+    blocked.add("config");
+    blocked.add("javascript");
+  }
 
   private PlaceholderAPI() {
+  }
+
+  public static boolean isBlocked(String name) {
+    return blocked.contains(name.toLowerCase());
   }
 
   // === Current API ===

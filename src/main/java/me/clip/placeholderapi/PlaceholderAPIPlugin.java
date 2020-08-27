@@ -141,10 +141,6 @@ public final class PlaceholderAPIPlugin extends JavaPlugin {
     if (config.isCloudEnabled()) {
       getCloudExpansionManager().load();
     }
-
-    if (config.checkUpdates()) {
-      new UpdateChecker(this).fetch();
-    }
   }
 
   @Override
