@@ -59,8 +59,6 @@ public final class CommandHelp extends PlaceholderCommand {
         "  &7&oParse a message with placeholders",
         "&b/papi &fparserel &9<player one> <player two> <message>",
         "  &7&oParse a message with relational placeholders",
-        "&b/papi &fregister &9<file name>",
-        "  &7&oRegister an expansion by the name of the file",
         "&b/papi &freload",
         "  &7&oReload the config of PAPI",
         "&b/papi &funregister &9<expansion name>",

@@ -32,7 +32,6 @@ import java.util.stream.Stream;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import me.clip.placeholderapi.commands.impl.cloud.CommandECloud;
 import me.clip.placeholderapi.commands.impl.local.CommandDump;
-import me.clip.placeholderapi.commands.impl.local.CommandExpansionRegister;
 import me.clip.placeholderapi.commands.impl.local.CommandExpansionUnregister;
 import me.clip.placeholderapi.commands.impl.local.CommandHelp;
 import me.clip.placeholderapi.commands.impl.local.CommandInfo;
@@ -59,7 +58,6 @@ public final class PlaceholderCommandRouter implements CommandExecutor, TabCompl
       new CommandParse(),
       new CommandReload(),
       new CommandVersion(),
-      new CommandExpansionRegister(),
       new CommandExpansionUnregister());
 
 
