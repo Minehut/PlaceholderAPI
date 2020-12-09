@@ -39,7 +39,7 @@ public final class PlaceholderAPIConfig {
   }
 
   public boolean cloudAllowUnverifiedExpansions() {
-    return plugin.getConfig().getBoolean("cloud_allow_unverified_expansions");
+    return false;
   }
 
 
